@@ -1,0 +1,158 @@
+
+#tweet-text {
+  border: none;
+  width: 100%;
+  background-color: #f4f1ec;
+  border-bottom: 5px solid #545149;
+  margin-bottom: 1em;
+  margin-top: 15px;
+  height: 50px;
+  outline: none;
+}
+#tweet-text::placeholder {
+  font-weight: bold;
+}
+
+#tweet-text:focus {
+  border: none;
+  border-bottom: 5px solid #545149;
+}
+
+#textdiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#tweet-button {
+  font-family: 'Bungee', cursive;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding: 5px 8px;
+}
+
+#tweet-button:hover {
+  box-shadow: 1px 1px 1px 1px #262931; 
+}
+
+#click-show {
+  outline: none;
+  border:none;
+  background: transparent;
+  color: #FFFFFF;
+}
+
+.counter {
+  font-family: 'Bungee', cursive;
+}
+
+.red {
+  color: red;
+}
+
+
+.tweet {
+  margin-top: 2em;
+  margin-bottom: 20px;
+  background-color: #f4f1ec;
+  height: 230px;
+  width: 100%;
+  border: 5px solid #545149;
+}
+
+#hover-text {
+  opacity: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tweet:hover {
+  box-shadow: 8px 8px 0px #a4b3e2;  
+}
+
+.tweet:hover #hover-text {
+  opacity: 1;
+}
+
+#poo {
+  padding-right: 0.2em;
+}
+
+.article {
+  border: none;
+  height: 30px;
+  width: auto;
+  border-bottom: 5px solid #545149;
+  margin: 10px;
+}
+.article p {
+  margin: auto;
+}
+
+.tweet-header {
+  padding: 0px 10px 4px 20px;
+}
+
+.error-container {
+  color: #D8000C;
+  background-color: #FFD2D2;
+}
+
+.tweet-footer {
+  font-size: 15px;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tweet-footer p {
+ margin: 0px;
+ margin-left: 15px;
+}
+
+#footer-icon {
+  margin-right: 15px;
+}
+
+#sticky-button {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 3em 3em 0;
+  border-radius: 50%;
+  padding: .25em;
+  width: 70px;
+  height: 70px;
+  background-color: orange;
+  opacity: 50%;
+  outline: none;
+ }
+
+ #sticky-button:hover {
+  opacity: 80%;
+ }
+
+
+  
+
+/* Desktop */
+@media only screen and (min-width: 1024px) {
+ body {
+   display: flex;
+ }
+ .container {
+   margin: 7%;
+ }
+ #sticky-button {
+  background-color: #84a1f1;
+}
+}
+
+
+
+

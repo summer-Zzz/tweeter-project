@@ -1,0 +1,39 @@
+
+nav {
+  height: 120px;
+  width: 100%;
+  padding: 1.5em;
+  background-color: orange;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+}
+
+#arrow-icon {
+  display: flex;
+  justify-content: center;
+}
+
+span {
+  font-family: 'Bungee', cursive;
+  font-size: 30px;
+  margin: 10px;
+  color: #FFFFFF;
+  padding-right: 1.5em;
+}
+
+/* tablets */
+@media only screen and (min-width: 768px) {
+  nav {
+    background-color: orange;
+  }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1024px) {
+  nav {
+    background-color: #4056A1;
+  }
+}

@@ -1,0 +1,25 @@
+.main-header {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:orange;
+  background-image: url("https://www.transparenttextures.com/patterns/crossword.png");
+}
+
+/* Desktop */
+@media only screen and (min-width: 1024px) {
+  .main-header {
+  height: 400px;
+  width: 60%;
+  margin: 5%;
+  margin-top: 10%;
+  }
+  #avatar {
+    height: 10em;
+    width: 10em;
+  }
+}
