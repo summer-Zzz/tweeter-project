@@ -6,18 +6,28 @@
 $(document).ready(() => {
 
   //click to show/hide the tweet form
-  const $tweetForm = $('#tweet-form');
-  const $clickShow = $("#click-show");
-  $tweetForm.hide();
-  $clickShow.click(() => {
-    $tweetForm.toggle();
-  });
+  const showTweetForm = () => {
+    const $tweetForm = $('#tweet-form');
+    const $clickShow = $("#click-show");
+    $clickShow.click(() => {
+      $tweetForm.toggle();
+    });
+  };
+  showTweetForm();
 
   //sticky back-to-top button
-  $("#sticky-button").click((event) => {
-    event.preventDefault();
-    $("html, body").animate({ scrollTop: 0 }, "slow");
-  })
+  const backTop = () => {
+    $(window).scroll(function() {
+      $("#sticky-button").css("display", "inline");
+    });
+    $("#sticky-button").click((event) => {
+      event.preventDefault();
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+    });
+  };
+
+  backTop();
+  
 
   const escape = function(str) {
     let div = document.createElement('div');
