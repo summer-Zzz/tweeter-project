@@ -28,16 +28,26 @@ $(document).ready(() => {
 
   backTop();
   
+  const timeSince = function(postDate) {
+    const timeNow = new Date().getTime();
+    const seconds = Math.floor((postDate - timeNow) / 1000)
+    const days = seconds / 86400;
+    if (days < 1 ){
+      return "Posted Today"
+    } else {
+      return `Posted ${days} days ago`
+    }
+  }
 
   const escape = function(str) {
-    let div = document.createElement('div');
+    const div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
   const createTweetElement = (tweetData) => {
-    let $tweet = $("<section>").addClass("tweet");
-    let html = `<header class="tweet-header">
+    const $tweet = $("<section>").addClass("tweet");
+    const html = `<header class="tweet-header">
   <p><img id='poo' src="${tweetData.user.avatars}">${tweetData.user.name}</p>
           <div id="hover-text">${tweetData.user.handle}</div>
         </header> 
@@ -48,7 +58,7 @@ $(document).ready(() => {
         <!-- time and likes in the footer -->
         <footer>
           <div class="tweet-footer">
-            <p>${tweetData.created_at}</p>
+            <p>${timeSince(tweetData.created_at)}</p>
             <div id="footer-icon">
               <i class="fas fa-flag"></i>
               <i class="fas fa-share-square"></i>
@@ -57,24 +67,24 @@ $(document).ready(() => {
           </div>
         </footer>`;
 
-    let tweetElement = $tweet.append(html);
+    const tweetElement = $tweet.append(html);
     return tweetElement;
   };
+
 
   const renderTweets = (tweets) => {
     // loops through tweets
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
 
-    let tweetContainer = $('.tweet-content');
+    const tweetContainer = $('.tweet-content');
     tweetContainer.empty();
 
     tweets.forEach((tweet) => {
-      let tweetElement = createTweetElement(tweet);
+      const tweetElement = createTweetElement(tweet);
       tweetContainer.prepend(tweetElement);
     });
   };
-
 
   const loadTweets = function(tweets) {
     //get all the tweets
@@ -89,8 +99,10 @@ $(document).ready(() => {
       }
     });
   };
+
   loadTweets();
 
+  const $tweetForm = $('#tweet-form');
   $tweetForm.on('submit', function(event) {
     event.preventDefault();
     let $this = $(this);
@@ -112,9 +124,9 @@ $(document).ready(() => {
         });
     }
   });
+
   $tweetForm.on('click', () => {
     $(".error-container").hide();
   });
 });
-
 
